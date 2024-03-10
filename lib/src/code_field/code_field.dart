@@ -14,7 +14,7 @@ class CodeField extends StatefulWidget {
   /// {@macro flutter.widgets.textField.smartQuotesType}
   final SmartQuotesType? smartQuotesType;
 
-/// {@macro flutter.widgets.textField.smartDashesType}
+  /// {@macro flutter.widgets.textField.smartDashesType}
   final SmartDashesType? smartDashesType;
 
   /// {@macro flutter.widgets.textField.keyboardType}
@@ -61,6 +61,9 @@ class CodeField extends StatefulWidget {
 
   /// {@macro flutter.widgets.textField.selectionControls}
   final TextSelectionControls? selectionControls;
+
+  /// {@macro flutter.widgets.EditableText.contextMenuBuilder}
+  final EditableTextContextMenuBuilder? contextMenuBuilder;
 
   /// {@macro flutter.widgets.textField.textInputAction}
   final TextInputAction? textInputAction;
@@ -112,6 +115,7 @@ class CodeField extends StatefulWidget {
     this.autoComplete,
     this.textInputAction,
     this.enableSuggestions = false,
+    this.contextMenuBuilder,
   }) : super(key: key);
 
   @override
@@ -297,6 +301,7 @@ class _CodeFieldState extends State<CodeField> {
         minLines: widget.minLines,
         maxLines: widget.maxLines,
         selectionControls: widget.selectionControls,
+        contextMenuBuilder: widget.contextMenuBuilder,
         expands: widget.expands,
         scrollController: _numberScroll,
         decoration: InputDecoration(
@@ -331,6 +336,7 @@ class _CodeFieldState extends State<CodeField> {
       controller: widget.controller,
       minLines: widget.minLines,
       selectionControls: widget.selectionControls,
+      contextMenuBuilder: widget.contextMenuBuilder,
       maxLines: widget.maxLines,
       expands: widget.expands,
       scrollController: _codeScroll,
